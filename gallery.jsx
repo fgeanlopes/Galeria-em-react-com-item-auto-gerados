@@ -16,7 +16,7 @@ export default function Gallery() {
         setGallery(generationItemSlide({"qtdImages":16, "name":"slide_2_gallery", "width":1536, "height":1252}));
       },[]);
 
-    const generationItemSlide = (({qtdImages, name, width, height})=>{
+    function generationItemSlide ({qtdImages, name, width, height}) {
         let item = [];
         for (let index = 1; index <= qtdImages; index++) {
             if(index <= 9){
@@ -26,16 +26,17 @@ export default function Gallery() {
             }
         }
         return item;
-    })
+    };
 
     function handleZoomGallery(e){
         setZoomGalleryActiveIndex(e);
         setZoomGallery(true);
-    }
+    };
+    
     function handleCloseGallery(){
         setZoomGallery(false);
         setZoomGalleryActiveIndex(0);
-    }
+    };
 
     return(
         <>
